@@ -2,16 +2,12 @@ import React from 'react';
 import fitty from 'fitty';
 
 // todo automatically upgrade fitty version and publish a new package version if tests pass
+// todo add gifs showing what react-fitty can do
 /**
- * TODO Add tests
- * TODO publish as a npm package
  * Snugly resizes text to fit its parent container width
- *
- * @param props
- * @constructor
  */
-export const ReactFitty: React.ForwardRefExoticComponent<any> = React.forwardRef<unknown>(function ReactFitty(
-    { children, ...rest },
+export const ReactFitty = React.forwardRef<HTMLElement, { minSize?: number; maxSize?: number; multiLine?: boolean }>(function ReactFitty(
+    { children, minSize = 12, maxSize = 512, multiLine = true, ...rest },
     ref: React.MutableRefObject<any> | ((instance: any) => void) | null
 ) {
     const internalRef = React.useRef<HTMLDivElement>(null);
@@ -25,9 +21,9 @@ export const ReactFitty: React.ForwardRefExoticComponent<any> = React.forwardRef
     React.useLayoutEffect(() => {
         const effectRef = (ref as React.MutableRefObject<HTMLDivElement>) || internalRef;
         fitty(effectRef!.current, {
-            minSize: 16,
-            maxSize: 512,
-            multiLine: true,
+            minSize: minSize,
+            maxSize: maxSize,
+            multiLine: multiLine,
             observeMutations: {
                 subtree: true,
                 childList: true,
