@@ -60,3 +60,6 @@ const MyComponent = () => (
 ```bash
 yarn ci
 ```
+
+## Acknowledgements
+[@rikschennink](https://github.com/rikschennink) for having created [fitty](https://github.com/rikschennink/fitty).
