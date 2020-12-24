@@ -3,6 +3,8 @@
 
 Scales up (or down) text so it fits perfectly to its parent container.
 
+1.5 KB
+
 Ideal for flexible and responsive websites.
 
 # Usage
@@ -49,7 +51,7 @@ const MyComponent = () => (
 | :---: | :---: | :---: | :---: |
 | minSize | number | ✓ | Min text size in pixels, default: 16
 | maxSize | number | ✓ | Max text size in pixels, max: 512
-| multiLine | boolean | ✓ | Wrap lines when using minimum font size.
+| multiLine | boolean | ✓ | Wrap lines when using minimum font size., default: false
 | observeMutations | Object | ✓ | The object be will merged with the default react-fitty MutationObserver internal config [https://javascript.info/mutation-observer](https://javascript.info/mutation-observer)
 
 ## Development Commands

@@ -1,13 +1,14 @@
 import React from 'react';
 import fitty from 'fitty';
 
-// todo automatically upgrade fitty version and publish a new package version if tests pass
-// todo add gifs showing what react-fitty can do
 /**
  * Snugly resizes text to fit its parent container width
  */
-export const ReactFitty = React.forwardRef<HTMLElement, { minSize?: number; maxSize?: number; multiLine?: boolean }>(function ReactFitty(
-    { children, minSize = 12, maxSize = 512, multiLine = true, ...rest },
+export const ReactFitty = React.forwardRef<
+    HTMLElement,
+    React.HTMLAttributes<HTMLDivElement> & { children?: React.ReactNode; minSize?: number; maxSize?: number; wrapText?: boolean }
+>(function ReactFitty(
+    { children, minSize = 12, maxSize = 512, wrapText = false, ...rest },
     ref: React.MutableRefObject<any> | ((instance: any) => void) | null
 ) {
     const internalRef = React.useRef<HTMLDivElement>(null);
@@ -20,17 +21,24 @@ export const ReactFitty = React.forwardRef<HTMLElement, { minSize?: number; maxS
 
     React.useLayoutEffect(() => {
         const effectRef = (ref as React.MutableRefObject<HTMLDivElement>) || internalRef;
-        fitty(effectRef!.current, {
+        const fitInstance = fitty(effectRef!.current, {
             minSize: minSize,
             maxSize: maxSize,
-            multiLine: multiLine,
+            multiLine: wrapText,
             observeMutations: {
                 subtree: true,
                 childList: true,
                 characterData: true,
                 attributeFilter: ['class'],
             },
-        }).fit();
+        });
+
+        // wait browser finish text width calc with relative properties like rem and %
+        // then, fit text in the next animation frame
+        // maybe that needed to be handled in fitty?
+        setTimeout(() => {
+            fitInstance.fit();
+        }, 0);
 
         return () => {
             fitty(effectRef.current!).unsubscribe();
