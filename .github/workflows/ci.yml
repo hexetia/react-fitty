@@ -1,0 +1,25 @@
+name: ci
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install
+        run: yarn
+      - name: Install Server Deps
+        run: |
+          cd example
+          yarn
+      - name: Build
+        run: yarn build
+      - name: Tests
+        run: yarn ci

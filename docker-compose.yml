@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    integration:
+        build: .
+        env_file:
+            - .env.local
+        volumes:
+            - .:/app
+        command: sh -c "yarn test"
