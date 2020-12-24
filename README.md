@@ -1,5 +1,6 @@
 # React Fitty
 ![React Fitty Example](https://raw.githubusercontent.com/morhogg/react-fitty/main/assets/fitty.gif)
+
 Scales up (or down) text so it fits perfectly to its parent container.
 
 Ideal for flexible and responsive websites.
