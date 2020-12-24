@@ -1,5 +1,5 @@
 # React Fitty
-![React Fitty Example](https://raw.githubusercontent.com/morhogg/react-fitty/assets/fitty.gif)
+![React Fitty Example](https://raw.githubusercontent.com/morhogg/react-fitty/main/assets/fitty.gif)
 Scales up (or down) text so it fits perfectly to its parent container.
 
 Ideal for flexible and responsive websites.
@@ -49,7 +49,7 @@ const MyComponent = () => (
 | minSize | number | ✓ | Min text size in pixels, default: 16
 | maxSize | number | ✓ | Max text size in pixels, max: 512
 | multiLine | boolean | ✓ | Wrap lines when using minimum font size.
-| observeMutations | Object | ✓ | The object will merged with the default react-fitty MutationObserver internal config [https://javascript.info/mutation-observer](https://javascript.info/mutation-observer)
+| observeMutations | Object | ✓ | The object be will merged with the default react-fitty MutationObserver internal config [https://javascript.info/mutation-observer](https://javascript.info/mutation-observer)
 
 ## Development Commands
 
