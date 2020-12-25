@@ -24,7 +24,7 @@ import { Typography } from "@material-ui/core"
 
 const MyComponent = () => (
     <div>
-        <Typography variant='h2' component={ReactFitty}>Text Text Text</Typography>
+        <Typography component={ReactFitty}>Text Text Text</Typography>
     </div>
 )
 ```
