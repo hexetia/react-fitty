@@ -4,7 +4,7 @@
   "module": "dist/react-fitty.esm.js",
   "keywords": ["fitty", "react", "react-fitty"],
   "repository": "https://github.com/morhogg/react-fitty",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,8 +15,7 @@
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
