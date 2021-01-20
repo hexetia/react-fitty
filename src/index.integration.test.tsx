@@ -14,6 +14,7 @@ test('fit parent size', async () => {
         args: ['--no-sandbox'],
     });
     const page = await browser.newPage();
+    // Use the example folder server
     await page.goto('http://localhost:1234/');
     await page.waitForSelector('#example', { timeout: 30_000 });
 
