@@ -11,9 +11,25 @@ const StyledText = styled(ReactFitty)`
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 `;
 
+const flexDiv = {
+    height: "50%",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center"
+};
+
 const App = () => {
     return (
         <div>
+            {/* todo support style and className on Wrapper(root div) */}
+            <ReactFitty style={{ width: '10%' }}>Mussum Ipsum, cacilds</ReactFitty>
+
+            <div style={...flexDiv}>
+                <ReactFitty>TEST1</ReactFitty>
+            </div>
+
             <ReactFitty id="example">Mussum Ipsum, cacilds</ReactFitty>
 
             <Typography id="mui" component={ReactFitty} variant="h2">
