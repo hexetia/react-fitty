@@ -1,5 +1,14 @@
 import React from 'react';
-import fitty from 'fitty';
+
+// In order to use react-scripts test, we need to "require" fitty instead of importing.
+// Otherwise, react-scripts test will result in error messages saying
+// SyntaxError: Unexpected token 'export'
+// This error stems from trying to import the  dist/fitty.module.js rollup file which is
+// the fitty package's main file.  Therefore, we need to explicitly require the
+// fitty.min.js file instead.
+//
+// See https://github.com/rikschennink/fitty/issues/76
+const fitty = require('fitty/dist/fitty.min.js');
 
 const fullWidth = { width: '100%' };
 
