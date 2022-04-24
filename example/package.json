@@ -14,13 +14,13 @@
   "alias": {
     "react": "../node_modules/react",
     "react-dom": "../node_modules/react-dom/profiling",
-    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling",
+    "scheduler/tracing": "../node_modules/react-dom/node_modules/scheduler/tracing-profiling",
     "fitty": "../node_modules/fitty"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "parcel": "^1.12.4",
+    "parcel": "^1.12.3",
     "typescript": "^4.1.3"
   }
 }
