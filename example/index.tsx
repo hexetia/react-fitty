@@ -11,13 +11,13 @@ const StyledText = styled(ReactFitty)`
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 `;
 
-const flexDiv = {
+const flexDiv: React.CSSProperties = {
     height: "50%",
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    textAlign: "center"
+    textAlign: "center",
 };
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
             {/* todo support style and className on Wrapper(root div) */}
             <ReactFitty style={{ width: '10%' }}>Mussum Ipsum, cacilds</ReactFitty>
 
-            <div style={...flexDiv}>
+            <div style={{ ...flexDiv }}>
                 <ReactFitty>TEST1</ReactFitty>
             </div>
 
